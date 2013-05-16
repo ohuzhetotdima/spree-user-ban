@@ -3,12 +3,11 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_user_ban'
   s.version     = '1.3.2'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
-  s.required_ruby_version = '>= 1.8.7'
+  s.summary     = 'Ban registered Spree users.'
+  s.required_ruby_version = '>= 1.9.3'
 
-  s.author    = 'Adam Mueller'
-  s.email     = 'adam@freerunningtech.com'
+  s.author    = 'FreeRunning Technologies'
+  s.email     = 'contact@freerunningtech.com'
   s.homepage  = 'http://www.freerunningtech.com'
 
   s.require_path = 'lib'
