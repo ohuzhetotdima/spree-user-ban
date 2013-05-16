@@ -4,6 +4,6 @@ Spree::Admin::UsersController.class_eval do
 
   def ban
     @user.toggle!(:banned)
-    redirect_to admin_users_path
+    redirect_to spree.admin_users_path
   end
 end

@@ -1,6 +1,19 @@
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
+require 'simplecov'
+require 'simplecov-rcov'
+
+class SimpleCov::Formatter::MergedFormatter
+  def format(result)
+    SimpleCov::Formatter::HTMLFormatter.new.format(result)
+    SimpleCov::Formatter::RcovFormatter.new.format(result)
+  end
+end
+
+SimpleCov.formatter = SimpleCov::Formatter::MergedFormatter
+SimpleCov.start 'rails'
+
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
 require 'rspec/rails'
@@ -18,6 +31,8 @@ require 'spree/core/url_helpers'
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include Spree::Core::TestingSupport::ControllerRequests, :type => :controller
+  config.include Devise::TestHelpers, :type => :controller
 
   # == URL Helpers
   #
@@ -43,4 +58,10 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # Run specs in random order to surface order dependencies. If you find an
+  # order dependency and want to debug it, you can fix the order by providing
+  # the seed, which is printed after each run.
+  #     --seed 1234
+  config.order = "random"
 end
