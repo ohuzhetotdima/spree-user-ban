@@ -5,15 +5,23 @@ module Spree
         include Spree::Admin::NavigationHelper
 
         def link_to_ban(user, options={})
-          options[:method] ||= :post
           if user.banned?
             icon = 'icon-undo'
             text = t(:unban)
+            alt = t(:ban)
           else
             icon = 'icon-ban-circle'
             text = t(:ban)
+            alt = t(:unban)
           end
-          link_to_with_icon(icon, text, spree.ban_admin_user_path(user), options)
+
+          options = {
+            method: :post,
+            remote: true,
+            class: 'user-ban-link',
+            data: {alt: alt}
+          }.update(options)
+          link_to_with_icon(icon, text, spree.ban_admin_user_path(user, format: :json), options)
         end
       end
     end

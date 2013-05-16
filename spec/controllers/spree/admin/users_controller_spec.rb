@@ -20,7 +20,7 @@ describe Spree::Admin::UsersController do
 
     it "should redirect to the admin users index" do
       spree_post :ban, id: '9'
-      response.should redirect_to spree.admin_users_path
+      response.should render_template :ban
     end
   end
 

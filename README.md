@@ -15,6 +15,10 @@ Then run `bundle install`. You'll also need to run the migrations with
   bundle exec rake railties:install:migrations
   bundle exec rake db:migrate
 
+And add the javascription to your project by adding the following to `application.js`:
+
+  //= require admin/spree_user_ban
+
 
 Testing
 -------
