@@ -4,3 +4,5 @@
 en:
   ban: 'Ban'
   unban: 'Unban'
+
+  account_banned: "That account has been suspended. If you believe this is an error, please contact support."

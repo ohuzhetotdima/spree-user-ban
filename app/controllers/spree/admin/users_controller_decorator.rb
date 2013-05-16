@@ -1,3 +1,4 @@
+require_dependency 'spree/admin/users_controller'
 Spree::Admin::UsersController.class_eval do
   helper 'spree/admin/users/navigation'
 
