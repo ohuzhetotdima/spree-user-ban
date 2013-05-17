@@ -8,16 +8,20 @@ Installation
 
 Just add this line to your Gemfile:
 
-  gem "spree_user_ban", github: "freerunningtechnologies/spree-user-ban"
+    gem "spree_user_ban", github: "freerunningtechnologies/spree-user-ban"
 
 Then run `bundle install`. You'll also need to run the migrations with
 
-  bundle exec rake railties:install:migrations
-  bundle exec rake db:migrate
+    bundle exec rake railties:install:migrations
+    bundle exec rake db:migrate
 
 And add the javascription to your project by adding the following to `application.js`:
 
-  //= require admin/spree_user_ban
+    //= require admin/spree_user_ban
+
+You'll also want to add the styles by adding the following to `application.css`:
+
+    *= require admin/spree_user_ban
 
 
 Testing
