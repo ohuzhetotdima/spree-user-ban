@@ -14,7 +14,7 @@ describe Spree::Admin::Users::NavigationHelper do
           'icon-undo',
           t(:unban),
           spree.ban_admin_user_path(user, format: :json),
-          {method: :post, remote: true, class: 'user-ban-link', data: {alt: t(:ban)}}
+          {method: :post, remote: true, class: 'user-ban-link', data: {alt: t(:ban), action: t(:unban).downcase}}
         )
       }
     end
@@ -24,7 +24,7 @@ describe Spree::Admin::Users::NavigationHelper do
           'icon-ban-circle',
           t(:ban),
           spree.ban_admin_user_path(user, format: :json),
-          {method: :post, remote: true, class: 'user-ban-link', data: {alt: t(:unban)}}
+          {method: :post, remote: true, class: 'user-ban-link', data: {alt: t(:unban), action: t(:ban).downcase}}
         )
       }
     end

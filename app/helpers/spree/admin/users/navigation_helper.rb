@@ -19,7 +19,7 @@ module Spree
             method: :post,
             remote: true,
             class: 'user-ban-link',
-            data: {alt: alt}
+            data: {alt: alt, action: text.downcase}
           }.update(options)
           link_to_with_icon(icon, text, spree.ban_admin_user_path(user, format: :json), options)
         end
