@@ -56,11 +56,11 @@ table {
     th, td {
       &.actions {
         .user-ban-link {
-          &.icon-undo:hover {
+          &.fa-undo:hover {
             background-color: $color-unban;
             color: white;
           }
-          &.icon-ban-circle:hover {
+          &.fa-ban-circle:hover {
             background-color: $color-ban;
             color: white;
           }
