@@ -10,7 +10,7 @@ module Spree
             text = t(:unban)
             alt = t(:ban)
           else
-            icon = 'fa-ban-circle'
+            icon = 'fa-ban'
             text = t(:ban)
             alt = t(:unban)
           end
