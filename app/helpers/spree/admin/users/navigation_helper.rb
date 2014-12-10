@@ -6,11 +6,11 @@ module Spree
 
         def link_to_ban(user, options={})
           if user.banned?
-            icon = 'icon-undo'
+            icon = 'fa-undo'
             text = t(:unban)
             alt = t(:ban)
           else
-            icon = 'icon-ban-circle'
+            icon = 'fa-ban-circle'
             text = t(:ban)
             alt = t(:unban)
           end
